@@ -18,7 +18,9 @@
 		<rect x="-40.033" y="-29.205" display="inline" fill="#E6A7E8" stroke="#FFFFFF" stroke-width="2.4794" stroke-miterlimit="10" width="340" height="340"/>
 </g>
 <g id="Knapp">
-	<circle fill="#C96FC9" cx="130.585" cy="128.334" r="99.75"/>
+	<g>
+		<circle fill="#729BD6" cx="130.585" cy="128.334" r="99.75"/>
+	</g>
 </g>
 <g id="Layer_3">
 	<path fill="#F18CF4" d="M193.255,107.149c0-17.317-14.039-31.356-31.356-31.356c-16.765,0-30.455,13.156-31.312,29.707
