@@ -6,7 +6,7 @@ cd TNM040 //Gå in i lokala filen
 
 Koda i alla filerna som kopierats ner
 
-git add . //Lägg till alla filer som redigerats
+git add . // ALTERNATIVT -p // Lägg till alla filer som redigerats
 
 git commit -m "kommentar" //Lägg till kommentar om filen
 
