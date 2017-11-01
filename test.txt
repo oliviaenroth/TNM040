@@ -2,6 +2,8 @@ cd //Ändra plats i filstruktur
 
 git clone url //Kopiera ner till lokalt
 
+cd TNM040 //Gå in i lokala filen
+
 
 Koda i alla filerna som kopierats ner
 
