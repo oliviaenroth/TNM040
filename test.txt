@@ -12,3 +12,4 @@ git commit -m "kommentar" //Lägg till kommentar om filen
 
 git push // Ladda upp
 
+haslölrsgåpkhg
