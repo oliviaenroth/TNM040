@@ -4,9 +4,7 @@ git clone url //Kopiera ner till lokalt
 
 cd TNM040 //Gå in i lokala filen
 
-
 Koda i alla filerna som kopierats ner
-
 
 git add . //Lägg till alla filer som redigerats
 
