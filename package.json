@@ -1,0 +1,29 @@
+{
+  "name": "tnm040",
+  "version": "1.0.0",
+  "description": "A replica of the old handheld game tamagotchi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliviaenroth/TNM040.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oliviaenroth/TNM040/issues"
+  },
+  "homepage": "https://github.com/oliviaenroth/TNM040#readme",
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1"
+  }
+}
