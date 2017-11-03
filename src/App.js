@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+
 import Screen from './Screen';
+import Button from './Button';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Screen/> /* FEEEEEL HÄÄÄR*/
+        <div id="device">
+          <div id="bars">
+          </div>
+          <Screen />
+          <div id="buttons">
+            <Button id="poop" pic="./pics/poop_btn.svg" />
+          </div>
+
+        </div>
+        
       </div>
     );
   }
