@@ -1,0 +1,26 @@
+{
+  "name": "tnm040",
+  "version": "1.0.0",
+  "description": "A replica of the old handheld game tamagotchi",
+  "private": true,
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-scripts": "1.0.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliviaenroth/TNM040.git"
+  },
+  "author": "codeSquaddd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oliviaenroth/TNM040/issues"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
