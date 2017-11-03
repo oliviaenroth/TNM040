@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="258.667px" height="258.667px" viewBox="0 0 258.667 258.667" enable-background="new 0 0 258.667 258.667"
+	 xml:space="preserve">
+<g id="Layer_6">
+	
+		<radialGradient id="SVGID_1_" cx="512.3335" cy="-702.4995" r="125.8342" gradientTransform="matrix(1 0 0 -1 -382.5 -573.666)" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#000000"/>
+		<stop  offset="0.8821" style="stop-color:#000000;stop-opacity:0.6"/>
+		<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
+	</radialGradient>
+	<circle fill="url(#SVGID_1_)" cx="129.833" cy="128.833" r="125.834"/>
+</g>
+<g id="Layer_7" display="none">
+	
+		<rect x="-40.033" y="-29.205" display="inline" fill="#E6A7E8" stroke="#FFFFFF" stroke-width="2.4794" stroke-miterlimit="10" width="340" height="340"/>
+</g>
+<g id="Knapp">
+	<g>
+		<circle fill="#729BD6" cx="130.585" cy="128.334" r="99.75"/>
+	</g>
+</g>
+<g id="Layer_5">
+	
+		<radialGradient id="SVGID_2_" cx="514.6694" cy="-704.3828" r="100.198" gradientTransform="matrix(0.9962 0 0 -0.9966 -382.0911 -573.6561)" gradientUnits="userSpaceOnUse">
+		<stop  offset="0.6965" style="stop-color:#282125;stop-opacity:0"/>
+		<stop  offset="1" style="stop-color:#000000;stop-opacity:0.6"/>
+	</radialGradient>
+	<ellipse fill="url(#SVGID_2_)" cx="130.623" cy="128.332" rx="99.82" ry="99.854"/>
+</g>
+<path fill="#A7EF78" d="M178.443,160.913c-2.991-1.501-5.121-4.022-6.211-6.927c-2.184,0.139-4.431-0.27-6.527-1.32
+	c-5.931-2.979-8.526-9.95-6.172-16.015c-4.244-3.741-5.627-9.993-2.971-15.286c1.044-2.081,2.588-3.739,4.403-4.931
+	c-0.131-2.167,0.28-4.396,1.325-6.476c2.125-4.235,6.292-6.762,10.707-7.009c0.183-0.53,0.391-1.056,0.649-1.571
+	c2.677-5.333,8.585-7.959,14.157-6.725c-3.362-5.026-7.281-8.999-10.77-11.673c-8.456-6.483-23.96-4.228-30.16-2.255
+	c-3.925,1.249-9.646,1.819-13.325,2.069c0.679-9.037,12.711-19.405,12.711-19.405c5.638,0.423,5.355-4.51,3.523-6.201
+	s-4.792,0-4.792,0c-8.558,6.668-12.818,20.165-14.238,25.578c-3.684-0.265-9.133-0.838-12.912-2.041
+	c-6.201-1.973-21.705-4.229-30.161,2.255c-8.456,6.483-19.448,20.577-18.885,38.898c0.563,18.323,6.849,42.143,21.14,54.966
+	c11.828,10.614,18.135,10.241,18.135,10.241s7.586,0.398,14.21-2.842c5.323-2.605,8.729-2.707,9.865-2.646v0.038
+	c0,0,0.076-0.012,0.212-0.023c0.136,0.012,0.211,0.023,0.211,0.023l0.002-0.038c1.135-0.061,4.54,0.041,9.864,2.646
+	c6.624,3.24,14.211,2.842,14.211,2.842s6.306,0.373,18.134-10.241c4.459-4.001,8.138-9.073,11.107-14.714
+	C183.422,162.473,180.836,162.114,178.443,160.913z"/>
+</svg>

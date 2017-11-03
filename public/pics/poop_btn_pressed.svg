@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="258.667px" height="258.667px" viewBox="0 0 258.667 258.667" enable-background="new 0 0 258.667 258.667"
+	 xml:space="preserve">
+<g id="Layer_6">
+	
+		<radialGradient id="SVGID_1_" cx="512.3335" cy="-702.4995" r="125.8342" gradientTransform="matrix(1 0 0 -1 -382.5 -573.666)" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#000000"/>
+		<stop  offset="0.8821" style="stop-color:#000000;stop-opacity:0.6"/>
+		<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
+	</radialGradient>
+	<circle fill="url(#SVGID_1_)" cx="129.833" cy="128.833" r="125.834"/>
+</g>
+<g id="Layer_7" display="none">
+	
+		<rect x="-40.033" y="-29.205" display="inline" fill="#E6A7E8" stroke="#FFFFFF" stroke-width="2.4794" stroke-miterlimit="10" width="340" height="340"/>
+</g>
+<g id="Knapp">
+	<g>
+		<circle fill="#729BD6" cx="130.585" cy="128.334" r="99.75"/>
+	</g>
+</g>
+<g id="Layer_5">
+	
+		<radialGradient id="SVGID_2_" cx="514.6694" cy="-704.3828" r="100.198" gradientTransform="matrix(0.9962 0 0 -0.9966 -382.0911 -573.6561)" gradientUnits="userSpaceOnUse">
+		<stop  offset="0.6965" style="stop-color:#282125;stop-opacity:0"/>
+		<stop  offset="1" style="stop-color:#000000;stop-opacity:0.6"/>
+	</radialGradient>
+	<ellipse fill="url(#SVGID_2_)" cx="130.623" cy="128.332" rx="99.82" ry="99.854"/>
+</g>
+<path fill="#D1A162" d="M177.032,122.853h-3.967c2.503-3.716,3.967-8.19,3.967-13.008c0-11.149-7.834-20.457-18.292-22.753l0.04,0
+	c0,0-0.043-0.007-0.128-0.022c-0.154-0.034-0.31-0.065-0.464-0.095c-2.397-0.522-11.641-2.994-18.195-11.182
+	c-8.896-11.111-18.611-11.299-18.611-11.299c3.252,4.879,3.613,11.383,0,16.623c-3.613,5.24-14.274,5.42-14.274,5.42
+	c-12.874,0-23.308,10.436-23.308,23.308c0,4.817,1.463,9.292,3.967,13.008h-2.882c-12.723,0-23.037,10.314-23.037,23.038
+	c0,12.722,10.314,23.036,23.037,23.036h92.147c12.724,0,23.036-10.314,23.036-23.036
+	C200.068,133.167,189.755,122.853,177.032,122.853z"/>
+<path fill="#EF6A6A" d="M174.428,74.758l-18.517-9.901c-1.704-0.909-3.824-0.269-4.736,1.438c-0.91,1.703-0.267,3.824,1.438,4.736
+	l6.143,3.285l-39.253,73.422l-15.571-8.323l-10.163,19.011c-9.113,17.045,5.266,35.479,5.266,35.479s23.404,1.556,32.43-15.326
+	l10.163-19.013l-15.898-8.499l39.255-73.422l6.143,3.284c1.705,0.911,3.827,0.267,4.737-1.437
+	C176.777,77.789,176.132,75.67,174.428,74.758z"/>
+</svg>
