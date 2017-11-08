@@ -12,7 +12,7 @@ class App extends Component {
         <div id="device">
           <div id="bars">
           </div>
-          <Screen />
+          <Screen mood="happy" />
           <div id="buttons">
             <Button id="poop" pic="./pics/poop_btn.svg" />
           </div>
