@@ -11,6 +11,12 @@ class Screen extends Component {
 			counter: 1,
 			frameRate: 500 //milliseconds
 		 };
+
+	}
+
+
+	componentWillReceiveProps(nextProps) {
+		this.setState({})
 	}
 
 	changePic() 
@@ -20,7 +26,7 @@ class Screen extends Component {
 		} else {
 			this.state.counter++;
 		}
-
+		console.log(this.state.source);
 		let nextPic = "./pics/" + this.state.source + this.state.counter + ".png";
 		this.setState({
 			imgSrc: nextPic
@@ -33,13 +39,12 @@ class Screen extends Component {
 
 		return(
 			<div id="screen">
-				<img src={this.state.imgSrc} alt="frame"/>
+				<img className="frame" src={this.state.imgSrc} alt="frame"/>
 			</div>
 		)
 	}
 	componentDidMount(){
 		setInterval(this.changePic.bind(this), this.state.frameRate);
-		console.log("hej");
 	}
 
 

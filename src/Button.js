@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
+
 import './Button.css';
 
 class Button extends Component {
+
+	updateMood(){
+		this.props.onClick(this.props.id);
+	}
+
   render() {
   	let pic = this.props.pic;
 
     return (
-      <div className="button">
+      <div className="button" onClick={this.updateMood.bind(this)} >
         <img src={pic} />
       </div>
     )
