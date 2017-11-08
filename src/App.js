@@ -15,10 +15,12 @@ class App extends Component {
           <Screen />
           <div id="buttons">
             <Button id="poop" pic="./pics/poop_btn.svg" />
+            <Button id="heart" pic="./pics/heart_btn.svg"/>
+            <Button id="food" pic="./pics/food_btn.svg"/>
           </div>
 
         </div>
-        
+
       </div>
     );
   }
