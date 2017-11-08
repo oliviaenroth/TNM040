@@ -11,7 +11,16 @@ class App extends Component {
       <div className="App">
         <div id="device">
           <div id="bars">
+            <div id="health_bar">
+              <img class="bar_icon" src="./pics/dead_icon.png"/>
+              <img class="bar_icon" src="./pics/smile_icon.png"/>
+            </div>
+            <div id="food_bar">
+              <img class="bar_icon" src="./pics/starve_icon.png"/>
+              <img class="bar_icon" src="./pics/full_icon.png"/>
+            </div>
           </div>
+          <img id="egg_border" src="./pics/egg_border.png"/>
           <Screen />
           <div id="buttons">
             <Button id="poop" pic="./pics/poop_btn.svg" />
