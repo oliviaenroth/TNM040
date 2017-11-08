@@ -21,6 +21,11 @@
   flex-flow: column;
 }
 
+.light {
+  height: 8vw;
+  width: 8vw;
+}
+
 .bar_icon {
   height: 10vw;
   width: 10vw;

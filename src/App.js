@@ -4,6 +4,7 @@ import './App.css';
 
 import Screen from './Screen';
 import Button from './Button';
+import Bar from './Bar';
 
 class App extends Component {
 
@@ -25,12 +26,14 @@ class App extends Component {
         <div id="device">
           <div id="bars">
             <div id="health_bar">
-              <img className="bar_icon" src="./pics/dead_icon.png"/>
-              <img className="bar_icon" src="./pics/smile_icon.png"/>
+              <img class="bar_icon" src="./pics/dead_icon.png"/>
+              <Bar id="health" n_lights="4"/>
+              <img class="bar_icon" src="./pics/smile_icon.png"/>
             </div>
             <div id="food_bar">
-              <img className="bar_icon" src="./pics/starve_icon.png"/>
-              <img className="bar_icon" src="./pics/full_icon.png"/>
+              <img class="bar_icon" src="./pics/starve_icon.png"/>
+              <Bar id="food" n_lights="1"/>
+              <img class="bar_icon" src="./pics/full_icon.png"/>
             </div>
           </div>
           <img id="egg_border" src="./pics/egg_border.png"/>
