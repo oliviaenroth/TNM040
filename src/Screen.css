@@ -1,4 +1,5 @@
 #screen{
+<<<<<<< HEAD
 	width: 300px;
 	height: 300px;
 	background-color: turquoise;
@@ -7,3 +8,10 @@ img {
 	width: 250px; 
 	height: 150px; 
 }
+=======
+	margin-top: 10vw;
+	width: 57vw;
+	height: 57vw;
+	background-color: green;
+}
+>>>>>>> 3b647171dfb9e9451c7fb04585813cd32f7fb678
