@@ -1,9 +1,9 @@
-Bar {
-  height: 10vh;
+.bar{
   width: 80%;
   display: flex;
   justify-content: space-between;
-  flex-flow: column;
+  align-items: center;
+  flex-flow: row;
 }
 
 .light {
@@ -14,7 +14,7 @@ Bar {
 }
 
 .bar_icon {
-  margin: 1vw;
+  margin: 0vw;
   height: 10vw;
   width: 10vw;
 }

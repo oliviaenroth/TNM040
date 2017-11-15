@@ -26,3 +26,13 @@
   flex-flow: row;
   justify-content: space-around;
 }
+#bars{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 90vw;
+  height: 25vw; /*right size is 19vw;*/
+  margin-bottom: -6vw;
+}

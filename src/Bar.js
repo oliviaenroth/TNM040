@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './Bar.css';
+
 export default class bar extends Component {
   render() {
     let n_lights = this.props.n_lights;

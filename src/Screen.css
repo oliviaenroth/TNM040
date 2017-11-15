@@ -3,8 +3,30 @@
 	height: 65vw;
 	background: url('/pics/Background.png');
 	background-size: 100% auto;
+
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	align-items: center;
 }
 .frame {
 	width: 25vw;
 	height: 25vw;
+}
+.poops{
+	width: 18vw;
+	height: 27vw;
+
+	position: absolute;
+	margin-left: 21vw;
+
+	display: flex;
+	flex-flow: column wrap;
+	flex-direction: column-reverse;
+
+	align-items: flex-end;
+}
+.poop{
+	width: 50%;
+	height: auto;
 }
