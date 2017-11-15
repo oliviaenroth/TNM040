@@ -1,20 +1,19 @@
-Bar {
-  height: 10vh;
+.bar{
   width: 80%;
   display: flex;
   justify-content: space-between;
-  flex-flow: column;
+  align-items: center;
+  flex-flow: row;
 }
 
 .light {
-  margin: 1vw;
-  margin-bottom: 3vw;
+  margin: 0 1vw;
   height: 6vw;
   width: 6vw;
 }
 
 .bar_icon {
-  margin: 1vw;
+  margin: 0vw;
   height: 10vw;
   width: 10vw;
 }
