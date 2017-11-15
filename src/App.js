@@ -13,19 +13,19 @@ class App extends Component {
     super(props)
     this.state = {
       food: 4,
-      poop: 2,
+      poop: 3,
       love: 5,
       health: 0,
-      mood: "happy"
+      mood: "tama"
      };
   }
 
   updateHealth() {
-    var food = this.state.food;
-    var poop = this.state.poop;
-    var love = this.state.love;
+    let food = this.state.food;
+    let poop = this.state.poop;
+    let love = this.state.love;
 
-    var newHealth = Math.round(love*food*(5 - poop)/25);
+    let newHealth = Math.round(love*food*(5 - poop)/25);
     this.setState({ health: newHealth });
 
     if (newHealth < 3) {
@@ -34,17 +34,38 @@ class App extends Component {
 
   }
 
-  changeState(state, n) {
-    var newValue = state + n;
-
-    if (newValue > 5) {newValue = 5;}
-    if (newValue < 0) {newValue = 0;}
-
-    this.setState({ [state]: newValue });
+  changeState(state, n) {      //This is horrendous
+    if (state == "poop") 
+    {
+      let newValue = this.state.poop + n;    //Animation and number of poops won't update, even though state does
+      if (newValue > 5) {newValue = 5;}
+      if (newValue < 0) {newValue = 0;}
+      this.setState({ poop: newValue });
+    }
+    if (state == "love") 
+    {
+      let newValue = this.state.love + n;
+      if (newValue > 5) {newValue = 5;}
+      if (newValue < 0) {newValue = 0;}
+      this.setState({ love: newValue });
+    }
+    if (state == "food") 
+    {
+      let newValue = this.state.food + n;
+      if (newValue > 5) {newValue = 5;}
+      if (newValue < 0) {newValue = 0;}
+      this.setState({ food: newValue });
+    }
+    
+    this.updateHealth();
   }
 
-  changeMood(newMood) {
-    this.setState({ mood: newMood });
+  btnPress(newMood) {     
+
+    console.log(newMood);
+
+    this.setState({ mood: newMood }); 
+    this.changeState(newMood, -1);
   }
 
   componentWillMount() {
@@ -52,7 +73,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.mood);
     return (
       <div className="App">
         <div id="device">
@@ -61,11 +81,11 @@ class App extends Component {
               <Bar id="food" n_lights={this.state.food} img1="./pics/starve_icon.png" img2="./pics/full_icon.png"/>
           </div>
           <img id="egg_border" src="./pics/egg_border.png"/>
-          <Screen mood={this.state.mood} />
+          <Screen poop={this.state.poop} mood={this.state.mood} />
           <div id="buttons">
-            <Button id="poop" pic="./pics/poop_btn.svg" onClick={this.changeMood.bind(this)}/>
-            <Button id="happy" pic="./pics/heart_btn.svg" onClick={this.changeMood.bind(this)}/>
-            <Button id="eating" pic="./pics/food_btn.svg" onClick={this.changeMood.bind(this)}/>
+            <Button id="poop" pic="./pics/poop_btn.svg" onClick={this.btnPress.bind(this)}/>
+            <Button id="happy" pic="./pics/heart_btn.svg" onClick={this.btnPress.bind(this)}/>
+            <Button id="eating" pic="./pics/food_btn.svg" onClick={this.btnPress.bind(this)}/>
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ class Button extends Component {
 
 	updateMood(){
 		this.props.onClick(this.props.id);
+    
 	}
 
   render() {

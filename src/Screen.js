@@ -7,68 +7,66 @@ class Screen extends Component {
 	constructor(props){
 		super(props)
 		this.state = { 
-			source: this.props.mood,
+			mood: this.props.mood,
+			oldMood: "",
 			counter: 1,
 			counterReset: 0,
-			n_poops: 4,
+			n_poops: this.props.poop,
+			isClicked: false,
 			frameRate: 500 //milliseconds
 		 };
-	console.log(this.state.source);
+	console.log(this.state.mood);
 	}
 
 
 	componentWillReceiveProps(nextProps) {
-		this.setState({source: nextProps.mood});
+		if(this.state.isClicked == false){ // if button is clicked dont change animation 
+			this.setState({oldMood: this.state.mood});
+			this.setState({mood: nextProps.mood});
+			this.setState({isClicked: true});
+		}
 	}
 
 	resetAnimation(mood)
-	{
-		if(this.state.source == mood && this.state.source != "tama"){
-			console.log(this.state.counterReset);
-			if(this.state.counterReset < 5 ){
-				this.state.counterReset++;
-			}
-			else{ 
-				this.setState({source: "tama"});
-				this.setState({counterReset: 1});
-			}	 
+	{	
+		if(this.state.counterReset < 5 ){
+			this.state.counterReset++;
 		}
+		else{ 
+			this.setState({mood: this.state.oldMood});
+			this.setState({counterReset: 1});
+			this.setState({isClicked: false}); // reset after animation is done, button can be clicked again
+		}	 
 	}
+	
 
 	changePic() 
-	{
-		this.resetAnimation(this.state.source);
-		if (this.state.counter === 4){
+	{ 
+			if(this.state.mood != "tama" && this.state.mood != "sad"){
+				this.resetAnimation(this.state.mood);
+			}
 		
-			this.setState({ counter: 1 });
+			if (this.state.counter === 4){
+			
+				this.setState({ counter: 1 });
 
-		} else {
-			this.state.counter++;
-		}
-
-
-		let nextTamaPic = nextTamaPic = "./pics/cropped pics/" + this.state.source + this.state.counter + ".png";
-		/*if(this.state.source == "happy"){
-			nextTamaPic = "./pics/cropped pics" + this.state.source + this.state.counter + ".png";
-		}
-		else if(this.state.source == "sad"){
-			//remove poop
-		}
-		else if (this.state.source == "heart") {
-			nextTamaPic = "./pics/" + this.state.source + this.state.counter + ".png";
-		}
-		else if (this.state.source == "food") {
-			//eat animation
-		}*/
-
-		//animate poops
-		let nextPoopPic = "./pics/cropped pics/poop" + this.state.counter + ".png";
+			} else {
+				this.state.counter++;
+			}
 
 
-		this.setState({
-			imgSrc: nextTamaPic,
-			poopSrc: nextPoopPic
-		});
+			let nextTamaPic = nextTamaPic = "./pics/cropped pics/" + this.state.mood + this.state.counter + ".png";
+			
+			//animate poops
+			let nextPoopPic = "./pics/cropped pics/poop" + this.state.counter + ".png";
+
+
+			this.setState({
+				imgSrc: nextTamaPic,
+				poopSrc: nextPoopPic
+			});
+		
+		
 		
 	}
 
