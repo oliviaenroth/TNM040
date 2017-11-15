@@ -9,8 +9,6 @@ import Bar from './Bar';
 
 class App extends Component {
 
-
-
   constructor(props){
     super(props)
     this.state = {
@@ -57,8 +55,8 @@ class App extends Component {
           <Screen mood={this.state.mood} />
           <div id="buttons">
             <Button id="poop" pic="./pics/poop_btn.svg" onClick={this.changeMood.bind(this)}/>
-            <Button id="heart" pic="./pics/heart_btn.svg" onClick={this.changeMood.bind(this)}/>
-            <Button id="food" pic="./pics/food_btn.svg" onClick={this.changeMood.bind(this)}/>
+            <Button id="happy" pic="./pics/heart_btn.svg" onClick={this.changeMood.bind(this)}/>
+            <Button id="eating" pic="./pics/food_btn.svg" onClick={this.changeMood.bind(this)}/>
           </div>
         </div>
 

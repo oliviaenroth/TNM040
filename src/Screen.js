@@ -9,10 +9,11 @@ class Screen extends Component {
 		this.state = { 
 			source: this.props.mood,
 			counter: 1,
+			counterReset: 0,
 			n_poops: 4,
 			frameRate: 500 //milliseconds
 		 };
-
+	console.log(this.state.source);
 	}
 
 
@@ -20,9 +21,25 @@ class Screen extends Component {
 		this.setState({source: nextProps.mood});
 	}
 
+	resetAnimation(mood)
+	{
+		if(this.state.source == mood && this.state.source != "tama"){
+			console.log(this.state.counterReset);
+			if(this.state.counterReset < 5 ){
+				this.state.counterReset++;
+			}
+			else{ 
+				this.setState({source: "tama"});
+				this.setState({counterReset: 1});
+			}	 
+		}
+	}
+
 	changePic() 
 	{
+		this.resetAnimation(this.state.source);
 		if (this.state.counter === 4){
+		
 			this.setState({ counter: 1 });
 
 		} else {
@@ -30,11 +47,11 @@ class Screen extends Component {
 		}
 
 
-		let nextTamaPic = ""
-		if(this.state.source == "happy"){
-			nextTamaPic = "./pics/" + this.state.source + this.state.counter + ".png";
+		let nextTamaPic = nextTamaPic = "./pics/cropped pics/" + this.state.source + this.state.counter + ".png";
+		/*if(this.state.source == "happy"){
+			nextTamaPic = "./pics/cropped pics" + this.state.source + this.state.counter + ".png";
 		}
-		else if(this.state.source == "poop"){
+		else if(this.state.source == "sad"){
 			//remove poop
 		}
 		else if (this.state.source == "heart") {
@@ -42,10 +59,10 @@ class Screen extends Component {
 		}
 		else if (this.state.source == "food") {
 			//eat animation
-		}
+		}*/
 
 		//animate poops
-		let nextPoopPic = "./pics/poop" + this.state.counter + ".png";
+		let nextPoopPic = "./pics/cropped pics/poop" + this.state.counter + ".png";
 
 
 		this.setState({
