@@ -38,7 +38,7 @@ class Screen extends Component {
 			//remove poop
 		}
 		else if (this.state.source == "heart") {
-			//love tama animation
+			nextTamaPic = "./pics/" + this.state.source + this.state.counter + ".png";
 		}
 		else if (this.state.source == "food") {
 			//eat animation

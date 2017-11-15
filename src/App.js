@@ -14,12 +14,34 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
+      food: 5,
+      poop: 5,
+      love: 5,
+      health: 0,
       mood: "happy"
      };
   }
 
+  updateHealth() {
+    var food = this.state.food;
+    var poop = this.state.poop;
+    var love = this.state.love;
+
+    var newHealth = Math.round(love*food*(5 - poop)/25);
+    this.setState({ health: newHealth });
+
+    if (newHealth < 3) {
+      this.setState({ mood: "sad" });
+    }
+
+  }
+
   changeMood(newMood) {
     this.setState({ mood: newMood });
+  }
+
+  componentWillMount() {
+    this.updateHealth()
   }
 
   render() {
@@ -28,8 +50,8 @@ class App extends Component {
       <div className="App">
         <div id="device">
           <div id="bars">
-              <Bar id="health" n_lights="4" img1="./pics/dead_icon.png" img2="./pics/smile_icon.png"/>
-              <Bar id="food" n_lights="1" img1="./pics/starve_icon.png" img2="./pics/full_icon.png"/>
+              <Bar id="health" n_lights={this.state.health} img1="./pics/dead_icon.png" img2="./pics/smile_icon.png"/>
+              <Bar id="food" n_lights={this.state.food} img1="./pics/starve_icon.png" img2="./pics/full_icon.png"/>
           </div>
           <img id="egg_border" src="./pics/egg_border.png"/>
           <Screen mood={this.state.mood} />
