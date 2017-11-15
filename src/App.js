@@ -17,7 +17,7 @@ class App extends Component {
 
   changeMood(newMood) {
     this.setState({ mood: newMood });
-    console.log(this.state.mood);
+    //console.log(this.state.mood);
   }
 
   render() {
@@ -43,7 +43,6 @@ class App extends Component {
             <Button id="heart" pic="./pics/heart_btn.svg" onClick={this.changeMood.bind(this)}/>
             <Button id="food" pic="./pics/food_btn.svg" onClick={this.changeMood.bind(this)}/>
           </div>
-
         </div>
 
       </div>
