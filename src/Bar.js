@@ -16,9 +16,9 @@ export default class bar extends Component {
 
     return (
       <div className="bar">
-      <img class="bar_icon" src={this.props.img1}/>
+      <img className="bar_icon" src={this.props.img1}/>
       {lights}
-      <img class="bar_icon" src={this.props.img2}/>
+      <img className="bar_icon" src={this.props.img2}/>
       </div>
     )
   }
