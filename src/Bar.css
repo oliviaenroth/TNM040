@@ -7,9 +7,10 @@
 }
 
 .light {
-  margin: 0 1vw;
-  height: 6vw;
-  width: 6vw;
+  margin: 0.5vw;
+  margin-bottom: 2vw;
+  height: 8vw;
+  width: 8vw;
 }
 
 .bar_icon {
