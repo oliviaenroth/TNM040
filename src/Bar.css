@@ -1,1 +1,20 @@
-ECHO is on.
+Bar {
+  height: 10vh;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column;
+}
+
+.light {
+  margin: 1vw;
+  margin-bottom: 3vw;
+  height: 6vw;
+  width: 6vw;
+}
+
+.bar_icon {
+  margin: 1vw;
+  height: 10vw;
+  width: 10vw;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './Bar.css';
 
 import Screen from './Screen';
 import Button from './Button';
@@ -12,7 +13,7 @@ class App extends Component {
 
   constructor(props){
     super(props)
-    this.state = { 
+    this.state = {
       mood: "happy"
      };
   }
@@ -27,16 +28,8 @@ class App extends Component {
       <div className="App">
         <div id="device">
           <div id="bars">
-            <div id="health_bar">
-              <img class="bar_icon" src="./pics/dead_icon.png"/>
-              <Bar id="health" n_lights="4"/>
-              <img class="bar_icon" src="./pics/smile_icon.png"/>
-            </div>
-            <div id="food_bar">
-              <img class="bar_icon" src="./pics/starve_icon.png"/>
-              <Bar id="food" n_lights="1"/>
-              <img class="bar_icon" src="./pics/full_icon.png"/>
-            </div>
+              <Bar id="health" n_lights="4" img1="./pics/dead_icon.png" img2="./pics/smile_icon.png"/>
+              <Bar id="food" n_lights="1" img1="./pics/starve_icon.png" img2="./pics/full_icon.png"/>
           </div>
           <img id="egg_border" src="./pics/egg_border.png"/>
           <Screen mood={this.state.mood} />
