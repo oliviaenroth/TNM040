@@ -9,6 +9,8 @@ class Screen extends Component {
 		this.state = { 
 			source: this.props.mood,
 			counter: 1,
+			n_poops: 3,
+			poopSrc: "poop",
 			frameRate: 500 //milliseconds
 		 };
 
@@ -16,7 +18,7 @@ class Screen extends Component {
 
 
 	componentWillReceiveProps(nextProps) {
-		this.setState({})
+		this.setState({source: nextProps.mood});
 	}
 
 	changePic() 
@@ -26,10 +28,26 @@ class Screen extends Component {
 		} else {
 			this.state.counter++;
 		}
-		//console.log(this.state.source);
-		let nextPic = "./pics/" + this.state.source + this.state.counter + ".png";
+		if(this.state.source == "poop"){
+			//remove poop
+		}
+		else if (this.state.source == "heart") {
+			//love tama animation
+		}
+		else if (this.state.source == "food") {
+			//eat animation
+		}
+		
+		//animate tama
+		let nextTamaPic = "./pics/" + this.state.source + this.state.counter + ".png";
+
+		//animate poops
+		let nextPoopPic = "./pics/" + this.state.poopSrc + this.state.counter + ".png";
+
+
 		this.setState({
-			imgSrc: nextPic
+			imgSrc: nextTamaPic,
+			poopSrc: nextPoopPic
 		});
 		
 	}
@@ -37,9 +55,14 @@ class Screen extends Component {
 
 	render(){
 
+		let poops = [];
+		for(let i=0; i < this.state.n_poops; i++) {
+			poops.push(<img classnName="poop" src={this.state.poopSrc} />);
+		}
 		return(
 			<div id="screen">
 				<img className="frame" src={this.state.imgSrc} alt="frame"/>
+				{poops}
 			</div>
 		)
 	}

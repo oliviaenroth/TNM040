@@ -9,6 +9,8 @@ import Bar from './Bar';
 
 class App extends Component {
 
+
+
   constructor(props){
     super(props)
     this.state = {
@@ -36,7 +38,6 @@ class App extends Component {
 
   changeMood(newMood) {
     this.setState({ mood: newMood });
-    //console.log(this.state.mood);
   }
 
   componentWillMount() {
@@ -44,6 +45,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.mood);
     return (
       <div className="App">
         <div id="device">
