@@ -26,7 +26,7 @@ class Screen extends Component {
 		} else {
 			this.state.counter++;
 		}
-		console.log(this.state.source);
+		//console.log(this.state.source);
 		let nextPic = "./pics/" + this.state.source + this.state.counter + ".png";
 		this.setState({
 			imgSrc: nextPic

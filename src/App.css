@@ -12,25 +12,6 @@
   justify-content: space-around;
 }
 
-#bars {
-  height: 10vh;
-  width: 80%;
-  background-color: red;
-  display: flex;
-  justify-content: space-between;
-  flex-flow: column;
-}
-
-.light {
-  height: 8vw;
-  width: 8vw;
-}
-
-.bar_icon {
-  height: 10vw;
-  width: 10vw;
-}
-
 #egg_border {
   position: absolute;
   width: 90vw;
