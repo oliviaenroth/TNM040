@@ -14,8 +14,8 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      food: 5,
-      poop: 5,
+      food: 4,
+      poop: 2,
       love: 5,
       health: 0,
       mood: "happy"
@@ -34,6 +34,15 @@ class App extends Component {
       this.setState({ mood: "sad" });
     }
 
+  }
+
+  changeState(state, n) {
+    var newValue = state + n;
+
+    if (newValue > 5) {newValue = 5;}
+    if (newValue < 0) {newValue = 0;}
+
+    this.setState({ [state]: newValue });
   }
 
   changeMood(newMood) {
@@ -57,11 +66,10 @@ class App extends Component {
           <Screen mood={this.state.mood} />
           <div id="buttons">
             <Button id="poop" pic="./pics/poop_btn.svg" onClick={this.changeMood.bind(this)}/>
-            <Button id="heart" pic="./pics/heart_btn.svg" onClick={this.changeMood.bind(this)}/>
-            <Button id="food" pic="./pics/food_btn.svg" onClick={this.changeMood.bind(this)}/>
+            <Button id="happy" pic="./pics/heart_btn.svg" onClick={this.changeMood.bind(this)}/>
+            <Button id="eating" pic="./pics/food_btn.svg" onClick={this.changeMood.bind(this)}/>
           </div>
         </div>
-
       </div>
     );
   }
