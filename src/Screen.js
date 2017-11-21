@@ -6,7 +6,7 @@ class Screen extends Component {
 
 	constructor(props){
 		super(props)
-		this.state = { 
+		this.state = {
 			mood: this.props.mood,
 			oldMood: "",
 			counter: 1,
@@ -20,7 +20,7 @@ class Screen extends Component {
 
 
 	componentWillReceiveProps(nextProps) {
-		if(this.state.isClicked == false){ // if button is clicked dont change animation 
+		if(this.state.isClicked == false){ // if button is clicked dont change animation
 			this.setState({oldMood: this.state.mood});
 			this.setState({mood: nextProps.mood});
 			this.setState({isClicked: true});
@@ -28,26 +28,26 @@ class Screen extends Component {
 	}
 
 	resetAnimation(mood)
-	{	
+	{
 		if(this.state.counterReset < 5 ){
 			this.state.counterReset++;
 		}
-		else{ 
+		else{
 			this.setState({mood: this.state.oldMood});
 			this.setState({counterReset: 1});
 			this.setState({isClicked: false}); // reset after animation is done, button can be clicked again
-		}	 
+		}
 	}
-	
 
-	changePic() 
-	{ 
+
+	changePic()
+	{
 			if(this.state.mood != "tama" && this.state.mood != "sad"){
 				this.resetAnimation(this.state.mood);
 			}
-		
+
 			if (this.state.counter === 4){
-			
+
 				this.setState({ counter: 1 });
 
 			} else {
@@ -56,7 +56,7 @@ class Screen extends Component {
 
 
 			let nextTamaPic = nextTamaPic = "./pics/cropped pics/" + this.state.mood + this.state.counter + ".png";
-			
+
 			//animate poops
 			let nextPoopPic = "./pics/cropped pics/poop" + this.state.counter + ".png";
 
@@ -65,9 +65,14 @@ class Screen extends Component {
 				imgSrc: nextTamaPic,
 				poopSrc: nextPoopPic
 			});
-		
-		
-		
+
+
+
+	}
+
+	updateProps(){
+		this.state.n_poops = this.props.poop;
+		this.state.mood = this.props.mood;
 	}
 
 
@@ -85,13 +90,14 @@ class Screen extends Component {
 					{poops}
 				</div>
 				<img className="frame" src={this.state.imgSrc} alt="frame"/>
-				
-				
+
+
 			</div>
 		)
 	}
 	componentDidMount(){
 		setInterval(this.changePic.bind(this), this.state.frameRate);
+		setInterval(this.updateProps.bind(this), this.state.frameRate);
 	}
 
 
