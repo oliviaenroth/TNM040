@@ -35,37 +35,39 @@ class App extends Component {
   }
 
   changeState(state, n) {      //This is horrendous
-    if (state == "poop") 
+    if (state == "poop")
     {
-      let newValue = this.state.poop + n;    //Animation and number of poops won't update, even though state does
+      let newValue = this.state.poop - n;    //Animation and number of poops won't update, even though state does
       if (newValue > 5) {newValue = 5;}
       if (newValue < 0) {newValue = 0;}
       this.setState({ poop: newValue });
+      console.log(this.state.poop);
     }
-    if (state == "love") 
+    if (state == "happy")
     {
       let newValue = this.state.love + n;
       if (newValue > 5) {newValue = 5;}
       if (newValue < 0) {newValue = 0;}
       this.setState({ love: newValue });
+      console.log(this.state.love);
     }
-    if (state == "food") 
+    if (state == "eating")
     {
       let newValue = this.state.food + n;
       if (newValue > 5) {newValue = 5;}
       if (newValue < 0) {newValue = 0;}
       this.setState({ food: newValue });
+      console.log(this.state.food);
     }
-    
+
     this.updateHealth();
   }
 
-  btnPress(newMood) {     
-
+  btnPress(newMood) {
     console.log(newMood);
+    this.setState({ mood: newMood });
+    this.changeState(newMood, 1);
 
-    this.setState({ mood: newMood }); 
-    this.changeState(newMood, -1);
   }
 
   componentWillMount() {
