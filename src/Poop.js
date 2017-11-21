@@ -5,7 +5,8 @@ export default class Poops extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			
+			counter: 0,
+			imgSrc: 
 		}
 
 	}

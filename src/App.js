@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+
 import logo from './logo.svg';
 import './App.css';
 import './Bar.css';
@@ -6,6 +8,8 @@ import './Bar.css';
 import Screen from './Screen';
 import Button from './Button';
 import Bar from './Bar';
+
+//add logic to check if ur logged in
 
 class App extends Component {
 
