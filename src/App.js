@@ -39,7 +39,7 @@ class App extends Component {
   }
 
   changeState(state, n) {      //This is horrendous
-    if (state == "poop")
+    if (state === "poop")
     {
       let newValue = this.state.poop - n;    //Animation and number of poops won't update, even though state does
       if (newValue > 5) {newValue = 5;}
@@ -47,21 +47,19 @@ class App extends Component {
       this.setState({ poop: newValue });
       console.log(this.state.poop);
     }
-    if (state == "happy")
+    if (state === "happy")
     {
       let newValue = this.state.love + n;
       if (newValue > 5) {newValue = 5;}
       if (newValue < 0) {newValue = 0;}
       this.setState({ love: newValue });
-      console.log(this.state.love);
     }
-    if (state == "eating")
+    if (state === "eating")
     {
       let newValue = this.state.food + n;
       if (newValue > 5) {newValue = 5;}
       if (newValue < 0) {newValue = 0;}
       this.setState({ food: newValue });
-      console.log(this.state.food);
     }
 
     this.updateHealth();
@@ -74,8 +72,9 @@ class App extends Component {
 
   }
 
-  componentWillMount() {
+  componentWillMount() {  // ludvigs kod skriver över våran., vi måste skicka tbx vår "update" till ludvigs update funktion 
     this.updateHealth()
+
   }
 
   render() {

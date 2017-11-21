@@ -15,15 +15,17 @@ class Screen extends Component {
 			isClicked: false,
 			frameRate: 500 //milliseconds
 		 };
-	console.log(this.state.mood);
 	}
 
 
 	componentWillReceiveProps(nextProps) {
+		console.log("I revcieved new props");
 		if(this.state.isClicked == false){ // if button is clicked dont change animation
 			this.setState({oldMood: this.state.mood});
 			this.setState({mood: nextProps.mood});
 			this.setState({isClicked: true});
+			console.log(this.state.isClicked);
+			console.log(this.state.mood);
 		}
 	}
 
@@ -34,7 +36,7 @@ class Screen extends Component {
 		}
 		else{
 			this.setState({mood: this.state.oldMood});
-			this.setState({counterReset: 1});
+			this.setState({counterReset: 0});
 			this.setState({isClicked: false}); // reset after animation is done, button can be clicked again
 		}
 	}
