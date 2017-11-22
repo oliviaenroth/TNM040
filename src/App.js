@@ -17,10 +17,11 @@ class App extends Component {
     super(props)
     this.state = {
       food: 4,
-      poop: 3,
+      poop: 4,
       love: 5,
       health: 0,
-      mood: "tama"
+      mood: "tama",
+      animation: ""
      };
   }
 
@@ -32,8 +33,12 @@ class App extends Component {
     let newHealth = Math.round(love*food*(5 - poop)/25);
     this.setState({ health: newHealth });
 
+
     if (newHealth < 3) {
       this.setState({ mood: "sad" });
+    }
+    else {
+      this.setState({mood: "tama"});
     }
 
   }
@@ -67,12 +72,11 @@ class App extends Component {
 
   btnPress(newMood) {
     console.log(newMood);
-    this.setState({ mood: newMood });
+    this.setState({ animation: newMood });
     this.changeState(newMood, 1);
-
   }
 
-  componentWillMount() {  // ludvigs kod skriver över våran., vi måste skicka tbx vår "update" till ludvigs update funktion 
+  componentWillMount() {  
     this.updateHealth()
 
   }
@@ -86,7 +90,7 @@ class App extends Component {
               <Bar id="food" n_lights={this.state.food} img1="./pics/starve_icon.png" img2="./pics/full_icon.png"/>
           </div>
           <img id="egg_border" src="./pics/egg_border.png"/>
-          <Screen poop={this.state.poop} mood={this.state.mood} />
+          <Screen poop={this.state.poop} mood={this.state.mood} animation={this.state.animation} />
           <div id="buttons">
             <Button id="poop" pic="./pics/poop_btn.svg" onClick={this.btnPress.bind(this)}/>
             <Button id="happy" pic="./pics/heart_btn.svg" onClick={this.btnPress.bind(this)}/>

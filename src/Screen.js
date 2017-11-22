@@ -19,23 +19,30 @@ class Screen extends Component {
 
 
 	componentWillReceiveProps(nextProps) {
-		console.log("I revcieved new props");
-		if(this.state.isClicked == false){ // if button is clicked dont change animation
+		if(this.state.isClicked === false){ // if button is clicked dont change animation
 			this.setState({oldMood: this.state.mood});
 			this.setState({mood: nextProps.mood});
+			this.setState({animation: nextProps.animation});
 			this.setState({isClicked: true});
-			console.log(this.state.isClicked);
-			console.log(this.state.mood);
-		}
-	}
 
+			if(this.state.n_poops !== nextProps.poop) {
+				this.changePoop(nextProps.poop);
+			}
+		}
+
+		
+	}
 	resetAnimation(mood)
 	{
-		if(this.state.counterReset < 5 ){
+		if(this.state.counterReset < 4 ){
 			this.state.counterReset++;
 		}
 		else{
 			this.setState({mood: this.state.oldMood});
+			this.setState({
+				animation: "",
+				appleSrc: ""
+			});
 			this.setState({counterReset: 0});
 			this.setState({isClicked: false}); // reset after animation is done, button can be clicked again
 		}
@@ -43,42 +50,70 @@ class Screen extends Component {
 
 
 	changePic()
-	{
-			if(this.state.mood != "tama" && this.state.mood != "sad"){
-				this.resetAnimation(this.state.mood);
+	{ 
+
+		let frame;
+		if(this.state.animation !== "" && this.state.animation !== "poop"){
+			frame = this.state.animation;
+		}
+		else {
+			frame = this.state.mood;
+			console.log(this.state.mood);
+		}
+
+			if((frame !== "tama") && (frame !== "sad")){
+				this.resetAnimation(frame);
 			}
 
 			if (this.state.counter === 4){
 
 				this.setState({ counter: 1 });
-
-			} else {
+			} 
+			else {
 				this.state.counter++;
 			}
 
 
-			let nextTamaPic = nextTamaPic = "./pics/cropped pics/" + this.state.mood + this.state.counter + ".png";
+			let nextTamaPic = "./pics/cropped pics/" + frame + this.state.counter + ".png";
 
 			//animate poops
 			let nextPoopPic = "./pics/cropped pics/poop" + this.state.counter + ".png";
 
+			//animate apple
+			if(this.state.animation === "eating"){
+				let nextApplePic = "./pics/cropped pics/apple" + this.state.counterReset + ".png";
+				this.setState({appleSrc: nextApplePic})
+			}
+			
 
 			this.setState({
 				imgSrc: nextTamaPic,
 				poopSrc: nextPoopPic
 			});
 
+		
+		
+
 
 
 	}
 
 	updateProps(){
-		this.state.n_poops = this.props.poop;
+		if(this.state.isClicked === false){
+		//this.state.n_poops = this.props.poop;
 		this.state.mood = this.props.mood;
+		  }
 	}
 
 
+
+	changePoop(n) {
+		this.setState({n_poops: n});
+		this.setState({isClicked: false}); 
+	}
+
 	render(){
+		console.log("poops in screen: " + this.state.n_poops);
 
 		let poops = [];
 		for(let i=0; i < this.state.n_poops; i++) {
@@ -90,9 +125,9 @@ class Screen extends Component {
 			<div id="screen">
 			<div className="poops">
 					{poops}
-				</div>
-				<img className="frame" src={this.state.imgSrc} alt="frame"/>
-
+			</div>
+			<img className="frame" src={this.state.imgSrc} alt="frame"/>
+			<img id="apple" src={this.state.appleSrc} />
 
 			</div>
 		)
