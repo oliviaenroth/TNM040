@@ -5,28 +5,33 @@
 	background-size: 100% auto;
 
 	display: flex;
-	flex-flow: row;
-	justify-content: center;
-	align-items: center;
+	flex-flow: row; 
+	justify-content: flex-start;
+	align-items: center; 
 }
 .frame {
 	width: 25vw;
 	height: 25vw;
+	margin-left: 20vw;
 }
 .poops{
 	width: 18vw;
 	height: 27vw;
 
 	position: absolute;
-	margin-left: 21vw;
-
 	display: flex;
 	flex-flow: column wrap;
 	flex-direction: column-reverse;
 
-	align-items: flex-end;
+	align-items: flex-start;
 }
 .poop{
 	width: 50%;
 	height: auto;
+}
+#apple{
+	width: 10vw;
+	height: auto;
+	margin-bottom: 7vw;
+	margin-left: -2vw;
 }
