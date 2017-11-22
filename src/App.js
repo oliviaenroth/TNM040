@@ -30,8 +30,9 @@ class App extends Component {
     let poop = this.state.poop;
     let love = this.state.love;
 
-    let newHealth = Math.round(love*food*(5 - poop)/25);
-    this.setState({ health: newHealth });
+  // let newHealth = Math.round(love*food*(5 - poop)/25);
+      let newHealth = 0;
+      this.setState({ health: newHealth });
 
 
     if (newHealth < 3) {
@@ -39,6 +40,11 @@ class App extends Component {
     }
     else {
       this.setState({mood: "tama"});
+    }
+
+    if(newHealth === 0){
+      this.setState({mood: "dying"});
+
     }
 
   }
@@ -66,6 +72,8 @@ class App extends Component {
       if (newValue < 0) {newValue = 0;}
       this.setState({ food: newValue });
     }
+
+
 
     this.updateHealth();
   }

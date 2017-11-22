@@ -13,7 +13,10 @@ class Screen extends Component {
 			counterReset: 0,
 			n_poops: this.props.poop,
 			isClicked: false,
-			frameRate: 500 //milliseconds
+			frameRate: 500, //milliseconds
+			intervalChangePic: undefined,
+			animation: this.props.mood,
+			score: 0
 		 };
 	}
 
@@ -51,7 +54,6 @@ class Screen extends Component {
 
 	changePic()
 	{ 
-
 		let frame;
 		if(this.state.animation !== "" && this.state.animation !== "poop"){
 			frame = this.state.animation;
@@ -64,14 +66,26 @@ class Screen extends Component {
 			if((frame !== "tama") && (frame !== "sad")){
 				this.resetAnimation(frame);
 			}
+			if (this.state.mood === "dying" ){
+				if (this.state.counter===8 ){ 
+					console.log("u iz ded");
+					console.log("score: " + this.state.score);
+					clearInterval(this.state.intervalChangePic);
+					}else{
 
-			if (this.state.counter === 4){
+						this.state.counter++;
+					}
+				}else{
+				if (this.state.counter === 4){
 
 				this.setState({ counter: 1 });
 			} 
 			else {
 				this.state.counter++;
+				this.state.score++;
 			}
+			}
+			
 
 
 			let nextTamaPic = "./pics/cropped pics/" + frame + this.state.counter + ".png";
@@ -113,7 +127,6 @@ class Screen extends Component {
 	}
 
 	render(){
-		console.log("poops in screen: " + this.state.n_poops);
 
 		let poops = [];
 		for(let i=0; i < this.state.n_poops; i++) {
@@ -133,7 +146,7 @@ class Screen extends Component {
 		)
 	}
 	componentDidMount(){
-		setInterval(this.changePic.bind(this), this.state.frameRate);
+		this.state.intervalChangePic = setInterval(this.changePic.bind(this), this.state.frameRate);
 		setInterval(this.updateProps.bind(this), this.state.frameRate);
 	}
 
