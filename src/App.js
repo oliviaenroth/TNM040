@@ -16,9 +16,9 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      food: 4,
+      food: 3,
       poop: 3,
-      love: 5,
+      love: 4,
       health: 0,
       mood: "tama"
      };
@@ -32,10 +32,21 @@ class App extends Component {
     let newHealth = Math.round(love*food*(5 - poop)/25);
     this.setState({ health: newHealth });
 
+    if (newHealth == 0) {
+      this.playSound('./audio/death.wav');
+    }
     if (newHealth < 3) {
       this.setState({ mood: "sad" });
+      this.playSound('./audio/alert_death.wav');
     }
+    if (newHealth == 5) {
+      this.playSound('./audio/happy.wav');
+    }
+  }
 
+  playSound(url){
+    let sound = new Audio(url);
+    sound.play();
   }
 
   changeState(state, n) {      //This is horrendous
@@ -69,12 +80,10 @@ class App extends Component {
     console.log(newMood);
     this.setState({ mood: newMood });
     this.changeState(newMood, 1);
-
   }
 
-  componentWillMount() {  // ludvigs kod skriver över våran., vi måste skicka tbx vår "update" till ludvigs update funktion 
+  componentWillMount() {  // ludvigs kod skriver över våran., vi måste skicka tbx vår "update" till ludvigs update funktion
     this.updateHealth()
-
   }
 
   render() {
