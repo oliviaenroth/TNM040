@@ -21,20 +21,20 @@ class App extends Component {
       health: 0,
       mood: "tama",
       animation: "",
-      poopInterval: 30000, // poop is not showing/ rendering or only showing 1 poop
+      soundIsPlaying: false,
+      poopInterval: 25000, // poop is not showing/ rendering or only showing 1 poop
       loveInterval: 30000,
-      foodInterval: 30000
+      foodInterval: 21000
      };
   }
 
-  updatePoop() {
+  updatePoop() {   //Continuous incrementing of poop
     this.changeState("poop", -1);
     this.playSound('./audio/poop.wav');
   }
 
   updateLove() {
     this.changeState("happy", -1);
-    this.playSound('./audio/love.wav');
   }
 
   updateFood() {
@@ -56,23 +56,16 @@ class App extends Component {
     else if (newHealth < 3) {
       this.setState({ mood: "sad" });
     }
+    /*
     else if (newHealth === 5) {
       this.playSound('./audio/happy.wav');
-    }
+    } */
     else {
       this.setState({mood: "tama"});
     }
       if(newHealth === 0){
       this.setState({mood: "dying"});
-
     }
-  }
-
-  
-
-  playSound(url){
-    let sound = new Audio(url);
-    sound.play();
   }
 
   changeState(state, n) {      //This is horrendous
@@ -100,8 +93,6 @@ class App extends Component {
       this.setState({ food: newValue });
     }
 
-
-
     this.updateHealth();
   }
 
@@ -109,15 +100,28 @@ class App extends Component {
     console.log(newMood);
     this.setState({ animation: newMood });
     //if(){
-      this.changeState(newMood, 1);  
+      this.changeState(newMood, 1);
     //}
-    
+  }
+
+  playSound(url){
+    let sound = new Audio(url);
+
+    if (this.state.health == 5) {
+      let sound = new Audio('./audio/happy.wav');
+    }
+    if (this.state.soundIsPlaying == false) {
+      this.setState({ soundIsPlaying: true});
+      sound.play();
+      sound.onended = function() {
+        this.setState({ soundIsPlaying: false});
+      }.bind(this)
+    }
   }
 
   sadAlert() {
     if (this.state.mood === "sad") {
       this.playSound('./audio/alert_death.wav');
-      console.log("play death sound");
     }
   }
 
