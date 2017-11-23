@@ -6,11 +6,16 @@ class Button extends Component {
 
 	updateMood(){
 		this.props.onClick(this.props.id);
-    
 	}
 
   render() {
-  	let pic = this.props.pic;
+		let pic = this.props.pic_pressed;
+
+		if (this.props.isPressed == false) {
+			pic = this.props.pic;
+		}
+
+		console.log(this.props.isPressed);
 
     return (
       <div className="button" onClick={this.updateMood.bind(this)} >
@@ -19,6 +24,5 @@ class Button extends Component {
     )
   }
 }
-
 
 export default Button;

@@ -21,11 +21,11 @@
 #buttons {
   width: 80%;
   height: 12vh;
-
   display: flex;
   flex-flow: row;
   justify-content: space-around;
 }
+
 #bars{
   display: flex;
   flex-flow: column;
