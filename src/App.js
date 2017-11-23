@@ -50,13 +50,13 @@ class App extends Component {
       //let newHealth = 0;
       this.setState({ health: newHealth });
 
-    if (newHealth == 0) {
+    if (newHealth === 0) {
       this.playSound('./audio/death.wav');
     }
     else if (newHealth < 3) {
       this.setState({ mood: "sad" });
     }
-    else if (newHealth == 5) {
+    else if (newHealth === 5) {
       this.playSound('./audio/happy.wav');
     }
     else {
@@ -108,7 +108,10 @@ class App extends Component {
   btnPress(newMood) {
     console.log(newMood);
     this.setState({ animation: newMood });
-    this.changeState(newMood, 1);
+    //if(){
+      this.changeState(newMood, 1);  
+    //}
+    
   }
 
   sadAlert() {

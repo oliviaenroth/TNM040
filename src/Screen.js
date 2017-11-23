@@ -17,23 +17,23 @@ class Screen extends Component {
 			intervalChangePic: undefined,
 			animation: this.props.mood,
 			score: 0
-		 };
+		};
 	}
 
 
 	componentWillReceiveProps(nextProps) {
 		if(this.state.isClicked === false){ // if button is clicked dont change animation
-			this.setState({oldMood: this.state.mood});
-			this.setState({mood: nextProps.mood});
-			this.setState({animation: nextProps.animation});
-			this.setState({isClicked: true});
-
-			if(this.state.n_poops !== nextProps.poop) {
-				this.changePoop(nextProps.poop);
-			}
+			this.setState({
+				oldMood: this.state.mood,
+				mood: nextProps.mood,
+				animation: nextProps.animation,
+				isClicked: true
+			});
+			this.changePoop(nextProps.poop);
+			//if(this.state.n_poops !== nextProps.poop) {
+				console.log("in poops: " + nextProps.poop);
+			//}
 		}
-
-		
 	}
 	resetAnimation(mood)
 	{
@@ -63,32 +63,33 @@ class Screen extends Component {
 			console.log(this.state.mood);
 		}
 
-			if((frame !== "tama") && (frame !== "sad")){
-				this.resetAnimation(frame);
+		if((frame !== "tama") && (frame !== "sad")){
+			this.resetAnimation(frame);
+		}
+		if (this.state.mood === "dying" ){
+			if (this.state.counter===8 ){ 
+				console.log("u iz ded");
+				console.log("score: " + this.state.score);
+				clearInterval(this.state.intervalChangePic);
+				this.setState({isClicked: true});
 			}
-			if (this.state.mood === "dying" ){
-				if (this.state.counter===8 ){ 
-					console.log("u iz ded");
-					console.log("score: " + this.state.score);
-					clearInterval(this.state.intervalChangePic);
-					}else{
-
-						this.state.counter++;
-					}
-				}else{
-				if (this.state.counter === 4){
-
+			else{
+				this.state.counter++;
+			}
+		}	
+		else{
+			if (this.state.counter === 4){
 				this.setState({ counter: 1 });
 			} 
 			else {
 				this.state.counter++;
 				this.state.score++;
 			}
-			}
-			
+		}
 
 
-			let nextTamaPic = "./pics/cropped pics/" + frame + this.state.counter + ".png";
+
+		let nextTamaPic = "./pics/cropped pics/" + frame + this.state.counter + ".png";
 
 			//animate poops
 			let nextPoopPic = "./pics/cropped pics/poop" + this.state.counter + ".png";
@@ -105,45 +106,37 @@ class Screen extends Component {
 				poopSrc: nextPoopPic
 			});
 
-		
-		
+		}
 
-
-
-	}
-
-	updateProps(){
-		if(this.state.isClicked === false){
-		//this.state.n_poops = this.props.poop;
-		this.state.mood = this.props.mood;
-		  }
+		updateProps(){
+			if(this.state.isClicked === false){
+			//this.state.n_poops = this.props.poop;
+			this.state.mood = this.props.mood;
+		}
 	}
 
 
 
 	changePoop(n) {
 		this.setState({n_poops: n});
-		this.setState({isClicked: false}); 
+		this.setState({isClicked: false}); //this is where we fuck up?
 	}
 
 	render(){
-
+		console.log( "button clicked: " + this.state.isClicked);
 		let poops = [];
 		for(let i=0; i < this.state.n_poops; i++) {
 			//let style = {order: i+1};
-			poops.push(<img className="poop"  src={this.state.poopSrc} />);
+			poops.push(<img className="poop" key={"poop" + i} src={this.state.poopSrc} />);
 		}
 
 		return(
 			<div id="screen">
-			<div className="poops">
-					{poops}
+				<div className="poops"> {poops} </div>
+				<img className="frame" src={this.state.imgSrc} alt="frame"/>
+				<img id="apple" src={this.state.appleSrc} />
 			</div>
-			<img className="frame" src={this.state.imgSrc} alt="frame"/>
-			<img id="apple" src={this.state.appleSrc} />
-
-			</div>
-		)
+			)
 	}
 	componentDidMount(){
 		this.state.intervalChangePic = setInterval(this.changePic.bind(this), this.state.frameRate);
