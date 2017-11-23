@@ -21,7 +21,7 @@ class App extends Component {
       health: 0,
       mood: "tama",
       animation: "",
-      poopInterval: 30000, // poop is not showing/ rendering or only showing 1 poop
+      poopInterval: 10000, // poop is not showing/ rendering or only showing 1 poop
       loveInterval: 30000,
       foodInterval: 30000
      };
