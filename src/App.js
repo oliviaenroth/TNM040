@@ -22,6 +22,7 @@ class App extends Component {
       mood: "tama",
       animation: "",
       soundIsPlaying: false,
+      buttonIsPressed: false,
       poopInterval: 25000, // poop is not showing/ rendering or only showing 1 poop
       loveInterval: 30000,
       foodInterval: 21000
@@ -97,11 +98,12 @@ class App extends Component {
   }
 
   btnPress(newMood) {
-    console.log(newMood);
-    this.setState({ animation: newMood });
-    //if(){
+    if (this.state.buttonIsPressed == false) {
+      this.setState({ buttonIsPressed: true });
+      this.setState({ animation: newMood });
       this.changeState(newMood, 1);
-    //}
+      setTimeout(function() { this.setState({ buttonIsPressed: false }); }.bind(this), 2500); //Wait 1 second before the button can be pressed again
+    }
   }
 
   playSound(url){
@@ -147,9 +149,9 @@ class App extends Component {
           <img id="egg_border" src="./pics/egg_border.png"/>
           <Screen poop={this.state.poop} mood={this.state.mood} animation={this.state.animation} />
           <div id="buttons">
-            <Button id="poop" pic="./pics/poop_btn.svg" onClick={this.btnPress.bind(this)}/>
-            <Button id="happy" pic="./pics/heart_btn.svg" onClick={this.btnPress.bind(this)}/>
-            <Button id="eating" pic="./pics/food_btn.svg" onClick={this.btnPress.bind(this)}/>
+            <Button id="poop" isPressed={this.state.buttonIsPressed} pic="./pics/poop_btn.svg" pic_pressed="./pics/poop_btn_pressed.svg" onClick={this.btnPress.bind(this)}/>
+            <Button id="happy" isPressed={this.state.buttonIsPressed} pic="./pics/heart_btn.svg" pic_pressed="./pics/heart_btn_pressed.svg" onClick={this.btnPress.bind(this)}/>
+            <Button id="eating" isPressed={this.state.buttonIsPressed} pic="./pics/food_btn.svg" pic_pressed="./pics/food_btn_pressed.svg" onClick={this.btnPress.bind(this)}/>
           </div>
         </div>
       </div>
