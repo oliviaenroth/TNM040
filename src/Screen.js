@@ -8,14 +8,14 @@ class Screen extends Component {
 		super(props)
 		this.state = {
 			mood: this.props.mood,
-			oldMood: "",
+			//oldMood: "",
 			counter: 1,
 			counterReset: 0,
 			n_poops: this.props.poop,
 			isClicked: false,
 			frameRate: 500, //milliseconds
 			intervalChangePic: undefined,
-			animation: this.props.mood,
+			animation: this.props.animation,
 			score: 0
 		};
 	}
@@ -31,7 +31,6 @@ class Screen extends Component {
 			});
 			this.changePoop(nextProps.poop);
 			//if(this.state.n_poops !== nextProps.poop) {
-				console.log("in poops: " + nextProps.poop);
 			//}
 		}
 	}
@@ -41,32 +40,30 @@ class Screen extends Component {
 			this.state.counterReset++;
 		}
 		else{
-			this.setState({mood: this.state.oldMood});
-			this.setState({
-				animation: "",
-				appleSrc: ""
-			});
+			this.setState({mood: this.props.mood});
+			this.setState({appleSrc: "" });
 			this.setState({counterReset: 0});
 			this.setState({isClicked: false}); // reset after animation is done, button can be clicked again
-		}
+		} 
 	}
 
 
 	changePic()
 	{ 
+
 		let frame;
 		if(this.state.animation !== "" && this.state.animation !== "poop"){
 			frame = this.state.animation;
 		}
 		else {
 			frame = this.state.mood;
-			console.log(this.state.mood);
 		}
 
 		if((frame !== "tama") && (frame !== "sad")){
 			this.resetAnimation(frame);
 		}
 		if (this.state.mood === "dying" ){
+			frame = this.state.mood;
 			if (this.state.counter===8 ){ 
 				console.log("u iz ded");
 				console.log("score: " + this.state.score);
@@ -86,6 +83,7 @@ class Screen extends Component {
 				this.state.score++;
 			}
 		}
+		
 
 
 
@@ -105,25 +103,27 @@ class Screen extends Component {
 				imgSrc: nextTamaPic,
 				poopSrc: nextPoopPic
 			});
-
 		}
+		
 
-		updateProps(){
-			if(this.state.isClicked === false){
-			//this.state.n_poops = this.props.poop;
-			this.state.mood = this.props.mood;
-		}
+	updateProps(){
+		//if(this.state.isClicked === false){
+		this.state.isClicked = this.props.isClicked;
+		this.state.n_poops = this.props.poop;
+		this.state.mood = this.props.mood;
+		this.state.animation = this.props.animation;
+	console.log(this.props.mood);
 	}
 
 
 
-	changePoop(n) {
+
+	changePoop(n){
 		this.setState({n_poops: n});
 		this.setState({isClicked: false}); //this is where we fuck up?
 	}
 
 	render(){
-		console.log( "button clicked: " + this.state.isClicked);
 		let poops = [];
 		for(let i=0; i < this.state.n_poops; i++) {
 			//let style = {order: i+1};

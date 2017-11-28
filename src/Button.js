@@ -15,8 +15,6 @@ class Button extends Component {
 			pic = this.props.pic;
 		}
 
-		console.log(this.props.isPressed);
-
     return (
       <div className="button" onClick={this.updateMood.bind(this)} >
         <img src={pic} />

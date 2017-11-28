@@ -25,7 +25,7 @@ class App extends Component {
       buttonIsPressed: false,
       poopInterval: 25000, // poop is not showing/ rendering or only showing 1 poop
       loveInterval: 30000,
-      foodInterval: 21000
+      foodInterval: 20000
      };
   }
 
@@ -39,7 +39,7 @@ class App extends Component {
   }
 
   updateFood() {
-    this.changeState("eating", -1);
+   this.changeState("eating", -1);
   }
 
   updateHealth() {
@@ -66,6 +66,7 @@ class App extends Component {
     }
       if(newHealth === 0){
       this.setState({mood: "dying"});
+      this.setState({buttonIsPressed: true});
     }
   }
 
@@ -102,7 +103,10 @@ class App extends Component {
       this.setState({ buttonIsPressed: true });
       this.setState({ animation: newMood });
       this.changeState(newMood, 1);
-      setTimeout(function() { this.setState({ buttonIsPressed: false }); }.bind(this), 2500); //Wait 1 second before the button can be pressed again
+      setTimeout(function() {
+       this.setState({ buttonIsPressed: false });
+        this.setState({ animation: "" });
+      }.bind(this), 2500); //Wait 2.5 second before the button can be pressed again
     }
   }
 
@@ -146,10 +150,10 @@ class App extends Component {
               <Bar id="health" n_lights={this.state.health} img1="./pics/dead_icon.png" img2="./pics/smile_icon.png"/>
               <Bar id="food" n_lights={this.state.food} img1="./pics/starve_icon.png" img2="./pics/full_icon.png"/>
           </div>
-          <img id="egg_border" src="./pics/egg_border.png"/>
-          <Screen poop={this.state.poop} mood={this.state.mood} animation={this.state.animation} />
+          <img id="egg_border" src="./pics/egg_border.png"/>																																																																																											
+          <Screen isClicked={this.state.btnIsPressed} poop={this.state.poop} mood={this.state.mood} animation={this.state.animation} />
           <div id="buttons">
-            <Button id="poop" isPressed={this.state.buttonIsPressed} pic="./pics/poop_btn.svg" pic_pressed="./pics/poop_btn_pressed.svg" onClick={this.btnPress.bind(this)}/>
+            <Button id="poop" isPressed={this.state.buttonIsPressed} pic="./pics/poop_btn.svg" pic_pressed="./pics/poop_btn_pressed.svg" onClick={this.btnPress.bind(this)}/>																						
             <Button id="happy" isPressed={this.state.buttonIsPressed} pic="./pics/heart_btn.svg" pic_pressed="./pics/heart_btn_pressed.svg" onClick={this.btnPress.bind(this)}/>
             <Button id="eating" isPressed={this.state.buttonIsPressed} pic="./pics/food_btn.svg" pic_pressed="./pics/food_btn_pressed.svg" onClick={this.btnPress.bind(this)}/>
           </div>
