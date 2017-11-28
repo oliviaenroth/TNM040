@@ -45,7 +45,7 @@ class Login extends Component {
 
   redirected(){
   	console.log("yoo");
-  	window.location = "/game";
+  	window.location = "/game?loggedIn=1";
   }
 
   render() {

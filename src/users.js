@@ -17,6 +17,10 @@ let DB = [
 	    "last_poop" : 2,
 	    "last_love" : 5,
 	    "password": "hello"
+	},
+	{
+		"username": "XxpussydestroyerxX",
+		"password": "madingo"
 	}
 ]
 
