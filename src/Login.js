@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Redirect, Route } from 'react-router';
 
 import DB from './users';
+import './Login.css';
 
 class Login extends Component {
 
@@ -23,12 +24,15 @@ class Login extends Component {
 	    event.preventDefault();
 	    const data = new FormData(event.target);
 
-	 /*   for(let i=0; i < DB[0].length; i++){
+	    for(let i=0; i < DB.length; i++){
+	    	console.log("from db: " +  DB[i]["username"] + DB[i]["password"] );
+
 	    	if(data.get("username") === DB[i]["username"] && data.get("password") === DB[i]["password"])
 	    	{
-*/	    		this.redirected();
-//	    	}	
-//	    }
+	    		console.log("match");
+	    		this.redirected();
+	    	}	
+	    }
 	    
 	    console.log(data.get("username"));
 	    console.log(data.get("password"));
@@ -36,33 +40,28 @@ class Login extends Component {
 
 
 	    
-	    fetch('/api/form-submit-url', {
-	      method: 'POST',
-	      body: data,
-    });
+	    
   }
 
   redirected(){
-  	console.log("hh");
-  	this.setState({redirect: true});
+  	console.log("yoo");
+  	window.location = "/game";
   }
 
   render() {
-  	console.log(this.state.redirect);
-  	if(this.state.redirect === true){
-  		console.log("right now im in render()");
-  		return <Redirect to="/game" />
-  	}
 
     return (
-      <div className="login">
-        	<h2>Login</h2>
+    	<div>
+    		<h1>Tamagotchi Replica 2000</h1>
+    		<div className="login">
         	<form onSubmit={this.handlePost.bind(this)} >
-		        <input name="username" type="text" />
-		        <input name="password" type="password" />
+		        <input name="username" type="text" placeholder="username" />
+		        <input name="password" type="password" placeholder="password" />
 		        <button>Login</button>
 	        </form>
       </div>
+    	</div>
+      
     )
   }
 }

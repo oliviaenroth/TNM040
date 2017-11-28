@@ -1,6 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+body{
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+
+	background-color: #c2a9dc;
+}
+h1{
+	margin-left: 21.2vw; /*correction for transform:  scale */
+	font-size: 7vw;
+	font-family: "VT323";
+	-webkit-transform:scale(1.5,1);
+}
+h2{
+	font-family: "VT323";
+	-webkit-transform:scale(1.5,1);
+}
 .login{
 	display: flex;
 	flex-flow: column wrap;
+	align-items: center;
 	justify-content: center;
+
+	width: calc(100% -6px);
+	height: 55vh;
+
+	border-width: 3px;
+	border-color: grey;
+
+	background: url('/pics/Background.png');
+	background-repeat: repeat;
+	background-size: 101vw;
+}
+.login form{
+	display: flex;
+	flex-flow: column wrap;
 	align-items: center;
 }
+.login input{
+	font-family: "VT323";
+	margin-top: 2vw;
+	height: 10vw;
+	text-align: center;
+	-webkit-transform: scale(2,1);
+	color: #1d1d1d;
+	border-width: 5px 3px 5px 3px;
+	border-color: #eaa5e4;
+	
+}
+.login form button{
+	margin-top: 5vw;
+	height: 10vw;
+	font-family: "VT323";
+	-webkit-transform: scale(2,1);
+	color: whitesmoke;
+	background-color: #eaa5e4;
+	border-width: 5px 3px solid;
+	border-color: #eaa5e4;
+	border-radius: 3px;
+}
+
