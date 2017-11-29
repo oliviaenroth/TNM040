@@ -1,0 +1,89 @@
+
+.sign_container{
+	height: 100vh;
+
+	background-color: whitesmoke;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+.sign_logo{
+	font-size: 7vw;
+	color: white;
+	font-family: "VT323";
+	-webkit-transform:scale(1.5,1);
+	text-align: center;
+	background-color: #8178cc;
+	padding: 2vh 0;
+	margin: 0;
+	width: 100vw;
+}
+.formStuff{
+	margin-top: 2.2vh;
+
+	width: calc(100% - 15vw);
+	padding: 3.5vw;
+	background-color: white;
+	border-radius: 2px;
+	box-shadow:  1px 1px 1px rgba(0,0,0, 0.2);
+ }
+.sign_h1{
+	color: #1d1d1d;
+	font-size: 13vw;
+	font-family: "VT323";
+	-webkit-transform:scale(1.5,1);
+	font-weight: 100;
+	margin: 0;
+	margin-top: 2vh;
+	margin-bottom: 10vh;
+	text-align: center;
+}
+.sign_h3{
+	color: #1d1d1d;
+	font-size: 3.8vw;
+	font-weight: 300;
+	margin: 0;
+	margin-bottom: 6vh;
+}
+.formStuff form{
+	width: 100%;
+	text-align: center;
+}
+.sign_h2{
+	color: #1d1d1d;
+	font-size: 4vw;
+	margin: 0;
+}
+.formStuff form input{
+	width: 63%; /*scale is 2:1 so full iwdth is 50% */;
+	height: 6vh;
+	margin-bottom: calc(2vh + 3px);
+
+	text-align: center;
+
+	-webkit-transform: scale(1.5,0.8);
+	font-family: "VT323";
+	color: #1d1d1d;
+	border-width: 5px 3px 5px 3px;
+	border-color: #eaa5e4;
+}
+.formStuff form input:focus{
+	outline: none;
+}
+
+.formStuff button{
+	margin-top: 2vh;
+	width: 64%;
+	padding: 4vw;
+	background-color: #eaa5e4;
+	color: white;
+	font-family: "VT323";
+	font-size: 6vw;
+
+	-webkit-transform: scale(1.5,0.8);
+	font-family: "VT323";
+
+	border-width: 5px 3px solid;
+	border-color: #eaa5e4;
+	border-radius: 3px;
+}
