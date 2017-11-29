@@ -4,6 +4,7 @@ import { Redirect, Route } from 'react-router';
 import DB from './users';
 import './Login.css';
 
+
 class Login extends Component {
 
 	constructor(props){
@@ -33,15 +34,7 @@ class Login extends Component {
 	    		this.redirected();
 	    	}	
 	    }
-	    
-	    console.log(data.get("username"));
-	    console.log(data.get("password"));
-
-
-
-	    
-	    
-  }
+    }
 
   redirected(){
   	console.log("yoo");
@@ -49,19 +42,18 @@ class Login extends Component {
   }
 
   render() {
-
     return (
-    	<div>
+    	<div className="container">
     		<h1>Tamagotchi Replica 2000</h1>
     		<div className="login">
-        	<form onSubmit={this.handlePost.bind(this)} >
-		        <input name="username" type="text" placeholder="username" />
-		        <input name="password" type="password" placeholder="password" />
-		        <button>Login</button>
-	        </form>
-      </div>
+	        	<form onSubmit={this.handlePost.bind(this)} >
+			        <input name="username" type="text" placeholder="username" />
+			        <input name="password" type="password" placeholder="password" />
+			        <button>Login</button>
+		        </form>
+        	</div>
+        	<a href="/signup">Sign Up!</a>
     	</div>
-      
     )
   }
 }
