@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect, Route } from 'react-router';
+//import { Redirect, Route } from 'react-router';
 
 import DB from './users';
 import './Login.css';
@@ -10,35 +10,29 @@ class Login extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
+			//redirect: false,
 			username: "",
-			password: "",
-			redirect: false
+			password: ""
 		}
-		
+
 	}
 
-/*
-*	REDIRECTING IS STUPID
-*
-*/
 	handlePost(event) {
 	    event.preventDefault();
 	    const data = new FormData(event.target);
 
 	    for(let i=0; i < DB.length; i++){
-	    	console.log("from db: " +  DB[i]["username"] + DB[i]["password"] );
 
 	    	if(data.get("username") === DB[i]["username"] && data.get("password") === DB[i]["password"])
 	    	{
-	    		console.log("match");
 	    		this.redirected();
-	    	}	
+	    	}
 	    }
     }
 
+	//send var that says the user is logged in. TO BE IMPLEMENTED
   redirected(){
-  	console.log("yoo");
-  	window.location = "/game?loggedIn=1";
+  	window.location = "/game";
   }
 
   render() {

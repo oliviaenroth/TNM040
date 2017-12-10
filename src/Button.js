@@ -11,13 +11,13 @@ class Button extends Component {
   render() {
 		let pic = this.props.pic_pressed;
 
-		if (this.props.isPressed == false) {
+		if (this.props.isPressed === false) {
 			pic = this.props.pic;
 		}
 
     return (
       <div className="button" onClick={this.updateMood.bind(this)} >
-        <img src={pic} />
+        <img src={pic} alt=""/>
       </div>
     )
   }

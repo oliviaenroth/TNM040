@@ -15,7 +15,7 @@ class Signup extends Component {
 			password: "",
 			redirect: false
 		}
-		
+
 	}
 
 	handlePost(event) {
@@ -23,9 +23,8 @@ class Signup extends Component {
 	    const data = new FormData(event.target);
 	    if(data.get("password1") === data.get("password2"))
 	    {
-	    	console.log("match");
 
-	    	let file = './users';
+	    	//let file = './users';
 
 	    	DB.push({username: data.get("username"), password: data.get("password1")});
 
@@ -35,7 +34,7 @@ class Signup extends Component {
 
 	    	/*jsonfile.writeFile(file, DB, {flag: 'a'}, function (err){ console.log("write to file failed")});*/
 
-    		
+
     		this.redirected();
 	    }
     }
@@ -52,9 +51,9 @@ class Signup extends Component {
 	      <div className="formStuff">
 		      <h1 className="sign_h1">Sign up</h1>
 				<form onSubmit={this.handlePost.bind(this)}>
-					
+
 					<input name="username" type="text" placeholder="enter username"/>
-					
+
 					<input name="password1" type="password" placeholder="enter password"/>
 					<input name="password2" type="password" placeholder="and again"/>
 
